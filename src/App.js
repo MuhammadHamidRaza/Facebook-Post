@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FbImageLibrary from 'react-fb-image-grid';
 import './App.css';
+import pic from './comments.png'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -32,7 +33,8 @@ function App() {
                 <p>{item.description}</p>
 
                 {item.images && <FbImageLibrary images={item.images} />}
-                <div style={{textAlign:"center",display:'flex',justifyContent:'space-around'}} >
+                <div style={{}}><img style={{width:'100vw'}} src={pic}/></div>
+                <div style={{border :'solid 1px black', textAlign:"center",display:'flex',justifyContent:'space-around'}} >
                   <div>
                   <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwUjSN0nxSfH5bbLbba5lzGaq4t6wgXx5ALA&usqp=CAU'></img><p>Like</p>
                   </div>
