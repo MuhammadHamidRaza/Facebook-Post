@@ -3,9 +3,15 @@ import React, { useEffect, useState } from 'react';
 import FbImageLibrary from 'react-fb-image-grid';
 import './App.css';
 import pic from './comments.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
+
 
   useEffect(() => {
     getData();
@@ -19,6 +25,12 @@ function App() {
         setProducts(res.products);
       });
   }
+  function handleLikeClick(e){
+    
+    var add = " blue"
+
+    e.target.classList =e.target.classList[0]=='blue'?'': add
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -28,6 +40,7 @@ function App() {
           products.map(function (item, index) {
             return (
               <div style={{marginTop:'40px',boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',padding:'10px',borderRadius:25,background:'white'}}>
+                
                 <h1><span><img className='profile' style={{width:'20%',marginLeft:'-5%'}} src='https://png.pngtree.com/png-clipart/20220213/original/pngtree-avatar-bussinesman-man-profile-icon-vector-illustration-png-image_7268049.png'/></span>{item.title}</h1>
                 <h3>{item.brand}</h3>
                 <br/>
@@ -50,13 +63,13 @@ function App() {
 
                 <div style={{background:'white', borderRadius:'26px', textAlign:"center",display:'flex',justifyContent:'space-around'}} >
                   <div>
-                  <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwUjSN0nxSfH5bbLbba5lzGaq4t6wgXx5ALA&usqp=CAU'></img><p>Like</p>
+                  <span onClick={handleLikeClick} ><FontAwesomeIcon icon={faThumbsUp} style={{width :"25%",height:"55%",}} /></span><p>Like</p>
                   </div>
                   <div>
                   <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5uOFm8Gqpi4N6pjZOUOiSSI0nNEC6NSWPKw&usqp=CAU'></img><p>Comment</p>
                   </div>
                   <div>
-                  <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOXvuBh44EUYz1kzTUWYcqz-pxBwsVtfNlaQ&usqp=CAU'></img><p>Comment</p>
+                  <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOXvuBh44EUYz1kzTUWYcqz-pxBwsVtfNlaQ&usqp=CAU'></img><p>Share</p>
                   </div>
                 </div>
               </div>

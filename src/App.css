@@ -5,6 +5,9 @@ body{
     width:60%;
     margin: auto;
 }
+.blue{
+    color: blue;
+}
 @media (max-width: 768px) {
     .body{
         width: 80% !important
