@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import FbImageLibrary from 'react-fb-image-grid';
 import './App.css';
@@ -18,23 +19,36 @@ function App() {
         setProducts(res.products);
       });
   }
-
   return (
     <div className="App">
       <header className="App-header">
+        <div className='body' >
         <h1 style={{ textAlign: 'center' }}>Post</h1>
         {products.length &&
           products.map(function (item, index) {
             return (
-              <div>
-                <h1>{item.title}</h1>
+              <div style={{marginTop:'40px',boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',padding:'10px',borderRadius:25,background:'white'}}>
+                <h1><span><img className='profile' style={{width:'20%',marginLeft:'-5%'}} src='https://png.pngtree.com/png-clipart/20220213/original/pngtree-avatar-bussinesman-man-profile-icon-vector-illustration-png-image_7268049.png'/></span>{item.title}</h1>
                 <h3>{item.brand}</h3>
                 <br/>
                 <p>{item.description}</p>
 
                 {item.images && <FbImageLibrary images={item.images} />}
-                <div style={{}}><img style={{width:'100vw'}} src={pic}/></div>
-                <div style={{border :'solid 1px black', textAlign:"center",display:'flex',justifyContent:'space-around'}} >
+                {/* <div style={{width:'100%'}}><img style={{borderRadius:'33px',width:'100%'}} src={pic}/></div> */}
+                <div>
+                <div>
+                <p style={{color: 'blue',}}>&#x1F499; Like this post!</p>
+
+                <span>&#x1F44D;</span>
+                <span>&#10084;</span>
+                <span>&#128515;</span>
+                <span>&#128549;</span>
+                <span>&#128514;</span>
+                <span style={{fontSize:'113%'}}>Muhammad Kamran Khan,Sir Kashif Sulamani and 1.5M Others 150Comments 5KShares</span>
+</div>
+
+
+                <div style={{background:'white', borderRadius:'26px', textAlign:"center",display:'flex',justifyContent:'space-around'}} >
                   <div>
                   <img style={{width :"25%",height:"55%",}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwUjSN0nxSfH5bbLbba5lzGaq4t6wgXx5ALA&usqp=CAU'></img><p>Like</p>
                   </div>
@@ -46,8 +60,10 @@ function App() {
                   </div>
                 </div>
               </div>
+              </div>
             );
           })}
+          </div>
       </header>
     </div>
   );
