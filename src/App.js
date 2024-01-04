@@ -10,7 +10,6 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [isLiked, setIsLiked] = useState(false);
 
 
   useEffect(() => {
@@ -25,12 +24,10 @@ function App() {
         setProducts(res.products);
       });
   }
-  function handleLikeClick(e){
-    
-    var add = " blue"
+function handleLikeClick(e) {
+    e.target.classList = (e.target.classList[0] === 'blue' ? '' : 'blue');
+}
 
-    e.target.classList =e.target.classList[0]=='blue'?'': add
-  };
   return (
     <div className="App">
       <header className="App-header">
@@ -45,19 +42,18 @@ function App() {
                 <h3>{item.brand}</h3>
                 <br/>
                 <p>{item.description}</p>
-
+<div style={{background:'blue'}}>
                 {item.images && <FbImageLibrary images={item.images} />}
-                {/* <div style={{width:'100%'}}><img style={{borderRadius:'33px',width:'100%'}} src={pic}/></div> */}
+     </div>           {/* <div style={{width:'100%'}}><img style={{borderRadius:'33px',width:'100%'}} src={pic}/></div> */}
                 <div>
                 <div>
                 <p style={{color: 'blue',}}>&#x1F499; Like this post!</p>
 
-                <span>&#x1F44D;</span>
-                <span>&#10084;</span>
-                <span>&#128515;</span>
-                <span>&#128549;</span>
-                <span>&#128514;</span>
-                <span style={{fontSize:'113%'}}>Muhammad Kamran Khan,Sir Kashif Sulamani and 1.5M Others 150Comments 5KShares</span>
+                <span className='first' style={{fontSize:'113%'}}>&#x1F44D;&#10084;&#128515;&#128549;&#128514;Muhammad Kamran Khan,Sir Kashif Sulamani and 1.5M Others 150Comments 5KShares</span>
+                <br/>
+                <span className='mobile'>&#x1F44D;&#128514;</span>
+                <span className='mobile'>1.5M Others 150Comments 5KShares</span>
+
 </div>
 
 

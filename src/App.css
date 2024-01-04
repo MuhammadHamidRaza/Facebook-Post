@@ -1,3 +1,6 @@
+.mobile{
+    display: none;
+}
 body{
     background: lightgray;
 }
@@ -8,11 +11,42 @@ body{
 .blue{
     color: blue;
 }
+
+
 @media (max-width: 768px) {
+    .mobile{
+        display: inline;
+
+    }
+    .first{
+        display: none;
+    }
     .body{
         width: 80% !important
     }
     .profile{
         width: 33% !important;
+    }
+    .mobile{
+        font-size: 217% !important;
+    }
+    
+}
+@media (max-width: 425px) {
+    .mobile{
+        font-size: 116% !important;
+    }
+
+    
+}
+@media (max-width: 375px) {
+    .mobile{
+        font-size: 102% !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .mobile{
+        font-size: 82% !important;
     }
 }
