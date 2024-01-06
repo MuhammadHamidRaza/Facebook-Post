@@ -1,0 +1,72 @@
+/* Navbar.css */
+.navbar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #3b5998;
+    color: white;
+}
+
+.logo img {
+    height: 30px;
+}
+
+
+
+
+.nav-icon img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Navbar.css */
+
+/* Default styles */
+
+
+
+
+.search input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.nav-icons {
+    display: flex;
+}
+
+.nav-icon {
+    margin: 10px;
+}
+
+.nav-icon img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        border-radius: 14px;
+        /* Adjust the width for smaller screens */
+    }
+
+    .search input {
+        width: 100%;
+        /* Make the search input full width */
+        margin-left: 0;
+        /* Remove left margin */
+        margin-top: 10px;
+        /* Add top margin for spacing */
+    }
+
+    .nav-icons {
+        display: none;
+        /* Hide navigation icons on smaller screens */
+    }
+}
