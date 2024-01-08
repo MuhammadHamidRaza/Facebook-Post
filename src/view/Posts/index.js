@@ -1,3 +1,4 @@
+
 import './style.css';
 import React from 'react';
 import freind from './freind.png';
@@ -12,53 +13,56 @@ function Posts(props) {
   }
 
   return (
-    <div className="body" style={{background:'white'}}>
-        <>
-            <Navbar/>
+    <div className="body" style={{ background: 'white' }}>
+      <>
+        <Navbar />
 
 
-      {props.products.length > 0 &&
-        props.products.map((item, index) => {
-          const isThirdPost = (index + 1) % 3 === 0; 
+        {props.products.length > 0 &&
+          props.products.map((item, index) => {
 
-          return (
-            
-            <div className='container'>
-              <h1><span><img className='profile' src='https://png.pngtree.com/png-clipart/20220213/original/pngtree-avatar-bussinesman-man-profile-icon-vector-illustration-png-image_7268049.png' /></span>{item.title}</h1>
-              <h3>{item.brand}</h3>
-              <br />
-              <p>{item.description}</p>
-              <div style={{ background: 'blue' }}>
-                {item.images && <FbImageLibrary images={item.images} />}
-              </div>
-              <div>
+            return (
+
+              <div className='container'>
+                <div className='profile ms-3'>
+                  <img src='https://png.pngtree.com/png-clipart/20220213/original/pngtree-avatar-bussinesman-man-profile-icon-vector-illustration-png-image_7268049.png' />
+                  <h4 className=''>{item.title}</h4>
+                </div>
+
+                <p className='ms-3 mb-1'> {item.brand} but the majority have suffered alteration in some form, by </p>
+                <p className='ms-3'>{item.description}</p>
                 <div>
-                  <p className='likeText'>&#x1F499; Like this post!</p>
-                  <span className='first' >&#x1F44D;&#10084;&#128515;&#128549;&#128514;Muhammad Kamran Khan,Sir Kashif Sulamani and 1.5M Others 150Comments 5KShares</span>
-                  <br />
-                  <span className='mobile'>&#x1F44D;&#128514;</span>
-                  <span className='mobile'>1.5M Others 150Comments 5KShares</span>
+                  {console.log(item.images)}
+
+                  {item.images && <FbImageLibrary images={item.images || []} />}
                 </div>
-                <div className='likeLine'>
+                <br/>
+                <div>
                   <div>
-                    <span onClick={handleLikeClick} ><FontAwesomeIcon icon={faThumbsUp} className='likeBtn' /></span><p>Like</p>
+                    <p className='likeText '>&#x1F499; Like this post!</p>
+                    <span className='first p-2' >&#x1F44D;&#10084;&#128515;&#128549;&#128514;Muhammad Kamran Khan,Sir Kashif Sulamani and 1.5M Others 150Comments 5KShares</span>
+                    <br />
+                    <span className='mobile'>&#x1F44D;&#128514;</span>
+                    <span className='mobile'>1.5M Others 150Comments 5KShares</span>
                   </div>
-                  <div>
-                    <img className='likeBtn' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5uOFm8Gqpi4N6pjZOUOiSSI0nNEC6NSWPKw&usqp=CAU'></img><p>Comment</p>
-                  </div>
-                  <div>
-                    <img className='likeBtn' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOXvuBh44EUYz1kzTUWYcqz-pxBwsVtfNlaQ&usqp=CAU'></img><p>Share</p>
+                  <div className='likeLine'>
+                    <div>
+                      <span onClick={handleLikeClick} ><FontAwesomeIcon icon={faThumbsUp} className='likeBtn' /></span><p>Like</p>
+                    </div>
+                    <div>
+                      <img className='likeBtn' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5uOFm8Gqpi4N6pjZOUOiSSI0nNEC6NSWPKw&usqp=CAU'></img><p>Comment</p>
+                    </div>
+                    <div>
+                      <img className='likeBtn' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOXvuBh44EUYz1kzTUWYcqz-pxBwsVtfNlaQ&usqp=CAU'></img><p>Share</p>
+                    </div>
                   </div>
                 </div>
+
               </div>
-              {isThirdPost &&<div className="image-container">
-                  <img style={{ width: '100%' }} src={freind} alt="Friend" />
-                </div>}
-            </div>
-            
-          );
-        })}
-        </>
+
+            );
+          })}
+      </>
     </div>
   );
 }

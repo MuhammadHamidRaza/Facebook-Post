@@ -1,25 +1,37 @@
-.heading{
+.heading {
     text-align: center
 }
-.container{
+
+.container {
+    box-shadow: 4px 4px 4px 4px !important;
     margin-top: 40px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px;
     border-radius: 25px;
     background-color: white;
-    border: 1px solid black;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.profile{
-    width:20%;
-    margin-left:-5%
+
+.profile {
+    display: flex;
+    margin-left: 3px;
 }
-.likeText{
-    color: blue;
+
+.profile h4 {
+    margin-top: 8vh;
 }
-.first{
-    font-size:113%
+
+.profile img {
+    width: 20%;
+    margin-left: -5%
 }
+
+.likeText {
+    color: black;
+}
+
+.first {
+    font-size: 113%
+}
+
 .likeLine {
     background: white;
     border-radius: 26px;
@@ -27,11 +39,35 @@
     display: flex;
     justify-content: space-around;
 }
+
 .likeBtn {
-    width: 25%;
-    height: 55%;
+    width: 25px;
+    height: 25px;
 }
-.image-container{
+
+.mobile {
+    padding: 10px;
+}
+
+.image-container {
     margin-top: 22px;
-  margin-bottom: 34px;
+    margin-bottom: 34px;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .profile img {
+        width: 42%;
+        margin-left: -5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .profile img {
+        width: 70%;
+        margin-left: -5%;
+    }
 }
